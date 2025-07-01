@@ -43,13 +43,6 @@
     <!-- Hero Section -->
     <section class="hero">
       <div class="hero-container">
-        <div class="hero-image">
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets%2Fc3e63201d02c4071b0e0a4869254d761%2Fa9531591f895404f8c1a3f42d53c68f7?format=webp&width=800"
-            alt="Júlia Rocha"
-            class="hero-photo"
-          />
-        </div>
         <div class="hero-content">
           <div class="hero-text">
             <h1 class="hero-title">
@@ -66,6 +59,11 @@
           </div>
         </div>
       </div>
+      <img
+        src="https://cdn.builder.io/api/v1/image/assets%2Fc3e63201d02c4071b0e0a4869254d761%2Fa9531591f895404f8c1a3f42d53c68f7?format=webp&width=800"
+        alt="Júlia Rocha"
+        class="hero-photo"
+      />
     </section>
 
     <!-- Experience Section -->
@@ -75,25 +73,236 @@
           <h2>Experiência</h2>
         </div>
 
-        <div class="flipbook">
-          <div class="flipbook-page page-4">
-            <span>4</span>
+        <div class="flipbook" onclick="openOverlay()">
+          <div class="flipbook-stack">
+            <div class="flipbook-page page-1">
+              <span>1</span>
+            </div>
+            <div class="flipbook-page page-2">
+              <span>2</span>
+            </div>
+            <div class="flipbook-page page-3">
+              <span>3</span>
+            </div>
+            <div class="flipbook-page page-4">
+              <span>4</span>
+            </div>
+            <div class="flipbook-cover">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/6a5d8c8190764c8c45e320c8449ec31617b7e7f7?width=1000"
+                alt="Portfolio Experience"
+              />
+            </div>
           </div>
-          <div class="flipbook-page page-3">
-            <span>3</span>
-          </div>
-          <div class="flipbook-page page-2">
-            <span>2</span>
-          </div>
-          <div class="flipbook-cover">
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/6a5d8c8190764c8c45e320c8449ec31617b7e7f7?width=1000"
-              alt="Portfolio Experience"
-            />
+          <div class="portfolio-icons">
+            <div class="portfolio-icon">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2Fc3e63201d02c4071b0e0a4869254d761%2F836354445c56434792d818f5fa0fc478?format=webp&width=800"
+                alt="Design"
+              />
+            </div>
+            <div class="portfolio-icon">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2Fc3e63201d02c4071b0e0a4869254d761%2F4174183981dc42ccac0f091ac72274fc?format=webp&width=800"
+                alt="Automation"
+              />
+            </div>
+            <div class="portfolio-icon">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2Fc3e63201d02c4071b0e0a4869254d761%2F018f55d10fb64016a2f3857ae36b778e?format=webp&width=800"
+                alt="Social Media"
+              />
+            </div>
+            <div class="portfolio-icon">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2Fc3e63201d02c4071b0e0a4869254d761%2F935e2bbea9854b52bf000384cc3c214f?format=webp&width=800"
+                alt="Branding"
+              />
+            </div>
+            <div class="portfolio-icon">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2Fc3e63201d02c4071b0e0a4869254d761%2F199b3d2b919641cb904bbbc66a6b36cc?format=webp&width=800"
+                alt="Development"
+              />
+            </div>
+            <div class="portfolio-icon">
+              <img
+                src="https://cdn.builder.io/o/assets%2Fc3e63201d02c4071b0e0a4869254d761%2F8735e8b79dfb4c91acac870f4cc9a7e5?alt=media&token=40fe4b92-44fe-4172-b3d4-bc085291ccbe&apiKey=c3e63201d02c4071b0e0a4869254d761"
+                alt="Languages"
+              />
+            </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Overlay -->
+    <div id="experienceOverlay" class="overlay" onclick="closeOverlay()">
+      <div class="overlay-content" onclick="event.stopPropagation()">
+        <button class="close-btn" onclick="closeOverlay()">&times;</button>
+        <div class="flipbook-pages">
+          <div class="page active" id="page1">
+            <div class="page-content">
+              <h3>Design de UI/UX e Prototipagem</h3>
+              <div class="page-layout">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/ef2df74cc9b02db9ea537c9dc9d1aa1e94229ee2?width=862"
+                  alt="Design Portfolio"
+                />
+                <div class="page-text">
+                  <p>
+                    Eu me especializo na criação de experiências digitais
+                    intuitivas e centradas no usuário que impulsionam o
+                    engajamento e os resultados de aprendizagem. Meu portfólio
+                    no Figma apresenta soluções de design abrangentes, incluindo
+                    dois grandes sites educacionais: uma plataforma dinâmica
+                    para a Olimpíada Brasileira de Geografia e o ecossistema
+                    educacional completo da EduOlympic.
+                  </p>
+                  <p>
+                    Além do web design, desenvolvi painéis de visualização de
+                    dados sofisticados que integram perfeitamente a análise de
+                    IA com interfaces amigáveis, e criei uma interface de
+                    chatbot intuitiva que aprimora a interação do usuário. Minha
+                    abordagem de design combina pensamento estratégico com
+                    excelência estética, garantindo que cada projeto entregue
+                    resultados mensuráveis, mantendo padrões excepcionais de
+                    experiência do usuário.
+                  </p>
+                  <p>
+                    <strong
+                      >Projetos Principais: Design de Plataforma Educacional,
+                      Painéis Integrados com IA, Design de Interface de Chatbot,
+                      Portfólio Pessoal.</strong
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="page" id="page2">
+            <div class="page-content">
+              <h3>Automação e Integração IA</h3>
+              <div class="page-layout">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/e3b8e04963def11156991656935018cee809cffc?width=862"
+                  alt="Automation"
+                />
+                <div class="page-text">
+                  <p>
+                    Eu utilizo as poderosas capacidades de automação do Make.com
+                    para criar sistemas de chatbot sofisticados que fornecem
+                    assistência instantânea e inteligente aos usuários. Minha
+                    especialidade está em projetar fluxos de trabalho
+                    automatizados que otimizam processos complexos, mantendo
+                    interações de usuário personalizadas.
+                  </p>
+                  <p>
+                    Através da implementação estratégica de automação,
+                    desenvolvi com sucesso ferramentas de assistência com
+                    tecnologia de IA que aumentam o engajamento do usuário e
+                    reduzem os custos operacionais. Minha abordagem foca na
+                    criação de integrações perfeitas que funcionam nos
+                    bastidores para oferecer experiências de usuário
+                    excepcionais sem comprometer a funcionalidade ou a
+                    confiabilidade.
+                  </p>
+                  <p>
+                    <strong
+                      >Especialização: Desenvolvimento de Chatbot, Automação de
+                      Fluxos de Trabalho, Integração de IA.</strong
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="page" id="page3">
+            <div class="page-content">
+              <h3>Estratégia de Mídia Social e Desenvolvimento de Marca</h3>
+              <div class="page-layout">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/bc472d0d4c79e69a15a3d3740f6db2272a9a880e?width=862"
+                  alt="Social Media"
+                />
+                <div class="page-text">
+                  <p>
+                    Eu desenvolvo estratégias de mídia social cativantes que
+                    transformam iniciativas educacionais em experiências de
+                    marca envolventes. Minha gestão do Instagram para a
+                    EduOlympic e a Olimpíada Brasileira de Geografia demonstra
+                    minha habilidade em criar narrativas de marca coesas que
+                    ressoam com públicos diversos, ao mesmo tempo em que
+                    impulsionam um engajamento significativo.
+                  </p>
+                  <p>
+                    Minha abordagem combina estratégia de conteúdo baseada em
+                    dados com storytelling criativo, garantindo uma voz de marca
+                    consistente em todos os pontos de contato. Eu me especializo
+                    na construção de comunidades educacionais através da
+                    curadoria estratégica de conteúdo, engajamento do público e
+                    posicionamento de marca que estabelece liderança de
+                    pensamento no setor educacional.
+                  </p>
+                  <p>
+                    <strong
+                      >Expertise: Estratégia de Marca, Criação de Conteúdo,
+                      Construção de Comunidade, Marketing Educacional.</strong
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="page" id="page4">
+            <div class="page-content">
+              <h3>Identidade de Marca e Comunicação Visual</h3>
+              <div class="page-layout">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/a8fcf7e42c056788693985e09846fd6c6a551e94?width=862"
+                  alt="Branding"
+                />
+                <div class="page-text">
+                  <p>
+                    Eu utilizo o Adobe Illustrator para criar identidades de
+                    marca abrangentes e conteúdo visual envolvente que
+                    estabelecem uma forte presença no mercado. Meu trabalho
+                    engloba soluções completas de branding, desde o design de
+                    logotipos até ativos para mídias sociais, garantindo uma
+                    comunicação visual consistente em todas as plataformas.
+                  </p>
+                  <p>
+                    Minha filosofia de design se concentra na criação de
+                    experiências visuais memoráveis que não apenas parecem
+                    excepcionais, mas também comunicam os valores da marca de
+                    forma eficaz. Através do uso estratégico de tipografia,
+                    teoria das cores e composição, desenvolvo identidades
+                    visuais que diferenciam as marcas em mercados competitivos,
+                    mantendo a excelência profissional.
+                  </p>
+                  <p>
+                    <strong
+                      >Capacidades: Design de Identidade de Marca, Criação de
+                      Logotipos, Gráficos para Mídias Sociais, Estratégia de
+                      Comunicação Visual.</strong
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="page-navigation">
+          <button onclick="prevPage()">&lt;</button>
+          <span id="pageCounter">1 / 4</span>
+          <button onclick="nextPage()">&gt;</button>
+        </div>
+      </div>
+    </div>
 
     <!-- About Section -->
     <section id="sobre-mim" class="about">
@@ -119,7 +328,7 @@
               de ferramentas e experiências digitais — de páginas web
               interativas a sistemas personalizados de automação. Também atuo na
               criação de marcas e estratégias para redes sociais, unindo visão
-              estética �� funcionalidade.
+              estética ��� funcionalidade.
             </p>
 
             <p>
