@@ -61,8 +61,9 @@ body {
 .nav-pages {
   display: flex;
   align-items: center;
-  gap: 71px;
+  gap: 24px;
   width: 100%;
+  justify-content: center;
 }
 
 .nav-link {
@@ -72,11 +73,12 @@ body {
     Roboto,
     Helvetica,
     sans-serif;
-  font-size: 25px;
+  font-size: 18px;
   font-weight: 300;
   color: #000;
   text-decoration: none;
   transition: color 0.3s ease;
+  margin: 0 auto;
 }
 
 .nav-link:hover {
@@ -84,14 +86,13 @@ body {
 }
 
 .nav-logo {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  margin: 0 auto;
 }
 
 .nav-logo img {
-  width: 98px;
-  height: 139px;
+  width: 60px;
+  height: 80px;
+  margin: 0 auto;
 }
 
 .contact-button {
