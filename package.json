@@ -1,0 +1,18 @@
+{
+  "name": "julia-alves-portfolio",
+  "version": "1.0.0",
+  "description": "Júlia Alves da Rocha - Portfolio Website",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python3 -m http.server 3000",
+    "start": "python3 -m http.server 3000",
+    "build": "echo 'No build step required for static site'"
+  },
+  "keywords": [
+    "portfolio",
+    "static",
+    "website"
+  ],
+  "author": "Júlia Alves da Rocha",
+  "license": "MIT"
+}
