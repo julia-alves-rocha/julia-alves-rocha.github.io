@@ -891,7 +891,7 @@ body {
   }
 
   .hero-container {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 60px;
     text-align: center;
   }
@@ -904,12 +904,6 @@ body {
     font-size: 20px;
   }
 
-  .hero-card {
-    width: 360px;
-    height: 480px;
-    justify-self: center;
-  }
-
   .experience-container,
   .about-container,
   .contact-container {
@@ -917,9 +911,14 @@ body {
   }
 
   .about-container {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 60px;
     text-align: center;
+  }
+
+  .about-column {
+    width: 100% !important;
+    margin-left: 0 !important;
   }
 
   .contact-container {
