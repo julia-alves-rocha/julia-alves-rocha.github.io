@@ -418,6 +418,8 @@ body {
   position: relative;
   width: 580px;
   height: 640px;
+  perspective: 1500px;
+  transform-style: preserve-3d;
 }
 
 .flipbook-page {
@@ -428,10 +430,29 @@ body {
   align-items: center;
   justify-content: center;
   border-radius: 0 46px 46px 0;
-  transition:
-    transform 0.3s ease,
-    z-index 0.3s ease;
-  z-index: 1;
+  transform-origin: left center;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+  backface-visibility: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.flipbook-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.1) 0%,
+    transparent 5%,
+    transparent 95%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+  border-radius: inherit;
+  pointer-events: none;
 }
 
 .flipbook-page span {
@@ -445,29 +466,88 @@ body {
   font-weight: 700;
   color: #fff;
   line-height: 44px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .page-1 {
   background: #0866ff;
   z-index: 4;
-  transform: translateX(-10px);
 }
 
 .page-2 {
   background: #d90429;
   z-index: 3;
-  transform: translateX(-7px);
 }
 
 .page-3 {
   background: #e35026;
   z-index: 2;
-  transform: translateX(-4px);
 }
 
 .page-4 {
   background: #0866ff;
   z-index: 1;
+}
+
+/* Flipbook Animation States */
+.flipbook-stack:hover .page-1 {
+  transform: rotateY(-15deg) translateZ(10px);
+  animation: pageFlutter 2s ease-in-out infinite;
+}
+
+.flipbook-stack:hover .page-2 {
+  transform: rotateY(-10deg) translateZ(8px);
+  animation: pageFlutter 2.2s ease-in-out infinite 0.2s;
+}
+
+.flipbook-stack:hover .page-3 {
+  transform: rotateY(-5deg) translateZ(6px);
+  animation: pageFlutter 2.4s ease-in-out infinite 0.4s;
+}
+
+.flipbook-stack.flipping .page-1 {
+  transform: rotateY(-180deg);
+  z-index: 1;
+}
+
+.flipbook-stack.flipping .page-2 {
+  transform: rotateY(-160deg);
+  z-index: 2;
+}
+
+.flipbook-stack.flipping .page-3 {
+  transform: rotateY(-140deg);
+  z-index: 3;
+}
+
+.flipbook-stack.flipping .page-4 {
+  z-index: 4;
+}
+
+@keyframes pageFlutter {
+  0%,
+  100% {
+    transform: rotateY(-15deg) translateZ(10px);
+  }
+  50% {
+    transform: rotateY(-25deg) translateZ(15px);
+  }
+}
+
+@keyframes pageFlip {
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(-90deg) scale(0.95);
+  }
+  100% {
+    transform: rotateY(-180deg);
+  }
+}
+
+.flipbook-page.flipping {
+  animation: pageFlip 1s ease-in-out forwards;
 }
 
 .flipbook-cover {
@@ -481,12 +561,47 @@ body {
   justify-content: center;
   padding: 107px 40px 333px 40px;
   z-index: 5;
+  transform-origin: left center;
+  transition: transform 0.6s ease;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.flipbook-cover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.15) 0%,
+    transparent 5%,
+    transparent 95%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.flipbook-cover:hover {
+  transform: rotateY(-10deg) translateZ(20px);
+}
+
+.flipbook-cover.opening {
+  transform: rotateY(-160deg);
 }
 
 .flipbook-cover img {
   width: 500px;
   height: 200px;
   mix-blend-mode: hard-light;
+  transition: opacity 0.3s ease;
+}
+
+.flipbook-cover:hover img {
+  opacity: 0.9;
 }
 
 .portfolio-icons {

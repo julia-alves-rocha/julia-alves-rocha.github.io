@@ -473,42 +473,94 @@
     <script>
       let currentPage = 1;
       const totalPages = 4;
+      let isAnimating = false;
 
       function openOverlay() {
-        document.getElementById("experienceOverlay").classList.add("active");
-        document.body.style.overflow = "hidden";
+        const flipbookStack = document.querySelector(".flipbook-stack");
+        const flipbookCover = document.querySelector(".flipbook-cover");
+
+        // Add opening animation
+        flipbookCover.classList.add("opening");
+        flipbookStack.classList.add("flipping");
+
+        // Delay the overlay opening to show the flip animation
+        setTimeout(() => {
+          document.getElementById("experienceOverlay").classList.add("active");
+          document.body.style.overflow = "hidden";
+        }, 800);
       }
 
       function closeOverlay() {
+        const flipbookStack = document.querySelector(".flipbook-stack");
+        const flipbookCover = document.querySelector(".flipbook-cover");
+
         document.getElementById("experienceOverlay").classList.remove("active");
         document.body.style.overflow = "auto";
+
+        // Reset flipbook to closed state
+        setTimeout(() => {
+          flipbookCover.classList.remove("opening");
+          flipbookStack.classList.remove("flipping");
+        }, 300);
       }
 
       function showPage(pageNumber) {
+        if (isAnimating) return;
+
+        isAnimating = true;
+
         // Hide all pages
         for (let i = 1; i <= totalPages; i++) {
           document.getElementById(`page${i}`).classList.remove("active");
         }
 
-        // Show current page
-        document.getElementById(`page${pageNumber}`).classList.add("active");
-        document.getElementById("pageCounter").textContent =
-          `${pageNumber} / ${totalPages}`;
+        // Add page flip animation
+        setTimeout(() => {
+          document.getElementById(`page${pageNumber}`).classList.add("active");
+          document.getElementById("pageCounter").textContent =
+            `${pageNumber} / ${totalPages}`;
+          isAnimating = false;
+        }, 300);
       }
 
       function nextPage() {
-        if (currentPage < totalPages) {
+        if (currentPage < totalPages && !isAnimating) {
           currentPage++;
           showPage(currentPage);
         }
       }
 
       function prevPage() {
-        if (currentPage > 1) {
+        if (currentPage > 1 && !isAnimating) {
           currentPage--;
           showPage(currentPage);
         }
       }
+
+      // Add auto-flip animation on hover
+      document.addEventListener("DOMContentLoaded", function () {
+        const flipbook = document.querySelector(".flipbook");
+        let flipInterval;
+
+        flipbook.addEventListener("mouseenter", function () {
+          flipInterval = setInterval(() => {
+            const pages = document.querySelectorAll(".flipbook-page");
+            pages.forEach((page, index) => {
+              setTimeout(() => {
+                page.style.transform = `rotateY(-${10 + index * 5}deg) translateZ(${5 + index * 2}px)`;
+              }, index * 100);
+            });
+          }, 2000);
+        });
+
+        flipbook.addEventListener("mouseleave", function () {
+          clearInterval(flipInterval);
+          const pages = document.querySelectorAll(".flipbook-page");
+          pages.forEach((page) => {
+            page.style.transform = "";
+          });
+        });
+      });
 
       // Close overlay when clicking outside
       document
