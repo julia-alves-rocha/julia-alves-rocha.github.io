@@ -496,7 +496,10 @@ body {
 }
 
 .about-content {
-  max-width: 681px;
+  max-width: 624px;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
 }
 
 .about-title {
@@ -510,7 +513,7 @@ body {
   font-weight: 900;
   line-height: 76px;
   color: #000;
-  margin: 0 0 var(--spacing-s) 0;
+  margin: 0 auto 24px;
 }
 
 .about-text {
