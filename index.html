@@ -469,5 +469,62 @@
         </p>
       </div>
     </footer>
+
+    <script>
+      let currentPage = 1;
+      const totalPages = 4;
+
+      function openOverlay() {
+        document.getElementById("experienceOverlay").classList.add("active");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeOverlay() {
+        document.getElementById("experienceOverlay").classList.remove("active");
+        document.body.style.overflow = "auto";
+      }
+
+      function showPage(pageNumber) {
+        // Hide all pages
+        for (let i = 1; i <= totalPages; i++) {
+          document.getElementById(`page${i}`).classList.remove("active");
+        }
+
+        // Show current page
+        document.getElementById(`page${pageNumber}`).classList.add("active");
+        document.getElementById("pageCounter").textContent =
+          `${pageNumber} / ${totalPages}`;
+      }
+
+      function nextPage() {
+        if (currentPage < totalPages) {
+          currentPage++;
+          showPage(currentPage);
+        }
+      }
+
+      function prevPage() {
+        if (currentPage > 1) {
+          currentPage--;
+          showPage(currentPage);
+        }
+      }
+
+      // Close overlay when clicking outside
+      document
+        .getElementById("experienceOverlay")
+        .addEventListener("click", function (e) {
+          if (e.target === this) {
+            closeOverlay();
+          }
+        });
+
+      // Close overlay with Escape key
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          closeOverlay();
+        }
+      });
+    </script>
   </body>
 </html>
