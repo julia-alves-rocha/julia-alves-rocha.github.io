@@ -428,12 +428,19 @@ body {
   align-items: center;
   justify-content: center;
   border-radius: 0 46px 46px 0;
-  transition: transform 0.3s ease, z-index 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    z-index 0.3s ease;
   z-index: 1;
 }
 
 .flipbook-page span {
-  font-family: "HK Grotesk Wide", -apple-system, Roboto, Helvetica, sans-serif;
+  font-family:
+    "HK Grotesk Wide",
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
   font-size: 300px;
   font-weight: 700;
   color: #fff;
@@ -441,25 +448,25 @@ body {
 }
 
 .page-1 {
-  background: #0866FF;
+  background: #0866ff;
   z-index: 4;
   transform: translateX(-10px);
 }
 
 .page-2 {
-  background: #D90429;
+  background: #d90429;
   z-index: 3;
   transform: translateX(-7px);
 }
 
 .page-3 {
-  background: #E35026;
+  background: #e35026;
   z-index: 2;
   transform: translateX(-4px);
 }
 
 .page-4 {
-  background: #0866FF;
+  background: #0866ff;
   z-index: 1;
 }
 
@@ -467,7 +474,7 @@ body {
   position: absolute;
   width: 580px;
   height: 640px;
-  background: #0866FF;
+  background: #0866ff;
   border-radius: 0 46px 46px 0;
   display: flex;
   align-items: center;
@@ -494,7 +501,7 @@ body {
   height: 120px;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0px 8px 16px 0px rgba(171, 190, 209, 0.40);
+  box-shadow: 0px 8px 16px 0px rgba(171, 190, 209, 0.4);
   transition: transform 0.3s ease;
 }
 
@@ -565,7 +572,12 @@ body {
 }
 
 .page-content h3 {
-  font-family: "Urbanist", -apple-system, Roboto, Helvetica, sans-serif;
+  font-family:
+    "Urbanist",
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
   font-size: 26px;
   font-weight: 700;
   margin-bottom: 30px;
@@ -588,7 +600,12 @@ body {
 
 .page-text {
   flex: 1;
-  font-family: "Instrument Sans", -apple-system, Roboto, Helvetica, sans-serif;
+  font-family:
+    "Instrument Sans",
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
   font-size: 16px;
   line-height: 24px;
   color: #000;
@@ -609,7 +626,7 @@ body {
 }
 
 .page-navigation button {
-  background: #0866FF;
+  background: #0866ff;
   color: #fff;
   border: none;
   border-radius: 50%;
@@ -621,11 +638,16 @@ body {
 }
 
 .page-navigation button:hover {
-  background: #0259DD;
+  background: #0259dd;
 }
 
 .page-navigation span {
-  font-family: "Instrument Sans", -apple-system, Roboto, Helvetica, sans-serif;
+  font-family:
+    "Instrument Sans",
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
   font-size: 16px;
   font-weight: 500;
 }
@@ -684,13 +706,6 @@ body {
   .portfolio-icons {
     grid-template-columns: 1fr;
   }
-}
-    sans-serif;
-  font-size: 64px;
-  font-weight: 900;
-  line-height: 76px;
-  color: #000;
-  margin: 0;
 }
 
 .flipbook {
