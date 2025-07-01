@@ -492,6 +492,7 @@ body {
   border-radius: 26px;
   border: 10px solid var(--cream);
   object-fit: cover;
+  margin: 19px auto 0 45px;
 }
 
 .about-content {
