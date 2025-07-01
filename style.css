@@ -547,10 +547,10 @@ body {
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 80px;
-  display: grid;
-  grid-template-columns: 666px 1fr;
-  gap: 134px;
-  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
 }
 
 .contact-form-wrapper {
